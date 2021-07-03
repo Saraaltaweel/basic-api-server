@@ -5,7 +5,7 @@ let id;
 
 describe('test server',()=>{
 it('create record',async()=>{
-    const res=await (await req.get('/food/')).send({
+    const res=await (await req.get('/food')).send({
         name:'pizza',
 
     })
@@ -15,7 +15,7 @@ it('create record',async()=>{
 });
 
 it('get one record based on id record',async()=>{
-    const res=await (await req.get('/food/1'))
+    const res=await (await req.get(`/food/${id}`))
         expect(res.status).toEqual(200);
 
     })
@@ -27,7 +27,7 @@ it('update record based on id',async()=>{
         expect(res.status).toEqual(200);
     })
 it('delete record',async()=>{
-    const res=await req.delete('/food/1');
+    const res=await req.delete(`/food/${id}`);
     expect(res.status).toEqual(202);
 
 })  
