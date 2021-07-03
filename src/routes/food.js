@@ -2,11 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-// class
-const logger = require('../middleware/logger.js');
-router.use(logger);
 const Food = require('../models/food');
-//new obj from the class
+
 const newFood = new Food(); 
 
 router.get('/food',getfood);
